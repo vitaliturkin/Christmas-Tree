@@ -1,8 +1,6 @@
 .header{
     color: var(--second-color);
     padding: 27px 0;
-    padding-left: 155px;
-    padding-right: 155px;
 }
 .header__container{
     display: grid;

@@ -9,6 +9,7 @@
 
 :html{
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *,*:after, *:before{
@@ -81,8 +82,8 @@ button{
 }
 
 @media (max-width: 1440px) {
-.container{
-    padding: 0 42px;
+    .container{
+        padding: 0 42px;
 }
 }
 

@@ -19,10 +19,17 @@ const garlandInit = () =>{
             position:fixed;
             inset: 0;
             background-image:url('garland/elka.png');
+            background-position: left top;
             background-repeat: no-repeat;
             pointer-events: none;
             z-index: 499;
         }
+
+        @media (max-width:900px) {
+            .garland-elka{
+                display: none;
+            }
+        }  
 
         .garland{
             position: fixed;

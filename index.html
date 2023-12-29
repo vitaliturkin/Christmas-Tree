@@ -38,9 +38,12 @@
     <link rel="stylesheet" href="style/pay.css">
     <link rel="stylesheet" href="style/option-pay.css">
     <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/overlay.css">
+    <link rel="stylesheet" href="style/model.css">
     
     <script src="garland/garland.js" defer></script>
     <script src="snow/snow.js" defer></script>
+    <script src="script/burger.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -53,19 +56,19 @@
                 <span class="burger__line"></span>
             </button>
 
-            <nav class="header__navigation navigation navigation__active">
+            <nav class="navigation header__navigation">
                 <ul class="navigation__list">
                     <li class="navigation__item">
-                        <a href="" class="navigation__link">Пихта Фразера</a>
+                        <a href="#one" class="navigation__link">Пихта Фразера</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="" class="navigation__link">Русская ель</a>
+                        <a href="#two" class="navigation__link">Русская ель</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="" class="navigation__link">Сибирская пихта</a>
+                        <a href="#three" class="navigation__link">Сибирская пихта</a>
                     </li>
                     <li class="navigation__item">
-                        <a href="" class="navigation__link">Как оплатить?</a>
+                        <a href="#pay" class="navigation__link">Как оплатить?</a>
                     </li>
             </nav>
 
@@ -150,7 +153,7 @@
         </div>
         </section>
 
-        <section class="pay">
+        <section class="pay" id="pay">
             <div class="container">
                 <h2 class="pay__title">Как можно оплатить?</h2>
                 <ul class="pay__list">
@@ -243,6 +246,37 @@
             </div>
         </div>
     </footer>
+
+    <div class="overlay overlay_order">
+        <div class="model">
+            <button class="model__close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#00654E"/>
+                </svg>
+            </button>
+
+            <h2 class="modal__title">Оформить заказ</h2>
+
+            <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+                <label class="form__label">
+                    <span class="form__label-text">ФИО</span>
+                    <input class="modal__input" type="text" placeholder="Введите ваше ФИО">
+                </label>
+                <label class="form__label">
+                    <span class="form__label-text">Телефон</span>
+                    <input class="modal__input" type="text" placeholder="Введите ваш номер телефона">
+                </label>
+
+                <input type="hidden" name="order">               
+
+                <button>Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay overlay_consultation">
+
+    </div>
 
     <svg class="hide">
         <symbol id="logo" width="164" height="76" fill="none" xmlns="http://www.w3.org/2000/svg">

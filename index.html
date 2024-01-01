@@ -39,11 +39,15 @@
     <link rel="stylesheet" href="style/option-pay.css">
     <link rel="stylesheet" href="style/footer.css">
     <link rel="stylesheet" href="style/overlay.css">
-    <link rel="stylesheet" href="style/model.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/timer.css">
     
     <script src="garland/garland.js" defer></script>
     <script src="snow/snow.js" defer></script>
     <script src="script/burger.js" defer></script>
+    <script src="script/modal.js" defer></script>
+    <script src="script/timer.js" defer></script>
+
 </head>
 <body>
     <header class="header">
@@ -115,7 +119,7 @@
             <p class="product__description">Мягкий аромат, форма, и способность сохранять мягкие иголки в течение длительного времени, делают её одним 
                 из лучших деревьев для рождества</p>
             <div class="product__button-wrapper" >
-            <button class="product__button product__button-order">Заказать</button>
+            <button class="product__button product__button-order" data-order="one">Заказать</button>
             <a href="#" class="product__button product__button-more">Подробнее</a>
             </div>
         </div>
@@ -130,7 +134,7 @@
                 <p class="product__features">Русская ель — наиболее традиционная разновидность рождественских деревьев, которую можно встретить в большинстве советских фильмов про новый год</p>
                 <p class="product__description">Отличительной особенностью русской ёлки являются выраженный хвойный запах, короткие колючие иголки и сравнительно менее пышная крона</p>
                 <div class="product__button-wrapper" >
-                <button class="product__button product__button-order">Заказать</button>
+                <button class="product__button product__button-order" data-order="two">Заказать</button>
                 <a href="#" class="product__button product__button-more">Подробнее</a>
                 </div>
             </div>
@@ -145,7 +149,7 @@
             <p class="product__features">Пихта сибирская является одной из самых красивых и ароматных хвойных пород и ее часто можно встретить в парках и садах</p>
             <p class="product__description">Хвоя Сибирской пихты в отличии от еловой крупнее, зеленее, совершенно не колючая и мягкая как трава</p>
             <div class="product__button-wrapper" >
-            <button class="product__button product__button-order">Заказать</button>
+            <button class="product__button product__button-order" data-order="three">Заказать</button>
             <a href="#" class="product__button product__button-more">Подробнее</a>
             </div>
         </div>
@@ -248,28 +252,28 @@
     </footer>
 
     <div class="overlay overlay_order">
-        <div class="model">
-            <button class="model__close">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="#00654E"/>
+        <div class="modal">
+            <button class="modal__close">
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="currentColor"/>
                 </svg>
             </button>
 
-            <h2 class="modal__title">Оформить заказ</h2>
+            <h2 class="modal__tittle">Оформить заказ</h2>
 
-            <form action="https://jsonplaceholder.typicode.com/posts" method="post">
-                <label class="form__label">
-                    <span class="form__label-text">ФИО</span>
-                    <input class="modal__input" type="text" placeholder="Введите ваше ФИО">
+            <form class="modal__form" action="https://jsonplaceholder.typicode.com/posts" method="post">
+                <label class="modal__label">
+                    <span class="modal__label-text">ФИО</span>
+                    <input class="modal__input" required name="fullName" type="text" placeholder="Введите ваше ФИО">
                 </label>
-                <label class="form__label">
-                    <span class="form__label-text">Телефон</span>
-                    <input class="modal__input" type="text" placeholder="Введите ваш номер телефона">
+                <label class="modal__label modal__label_last">
+                    <span class="modal__label-text">Телефон</span>
+                    <input class="modal__input" required name="phone" type="tel" placeholder="Введите ваш номер телефона">
                 </label>
 
-                <input type="hidden" name="order">               
+                <input class="modal__order" type="hidden" name="order">               
 
-                <button>Заказать звонок</button>
+                <button class="modal__button">Заказать звонок</button>
             </form>
         </div>
     </div>
